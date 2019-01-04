@@ -11,6 +11,7 @@ public class ParallelJava2PI extends Task {
     private LongVbl count;
 
     public void main(String[] args) {
+
         mRandomLimit = Long.parseLong(args[0]);
         mNumberOfPoints = Long.parseLong(args[1]);
         count = new LongVbl.Sum(0);

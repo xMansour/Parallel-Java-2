@@ -1,13 +1,13 @@
 import java.math.BigInteger;
 
-public class Main {
+public class Prime {
     private static String[] mPrimeArguments = {"1000000000100011"};
-    private static String[] mPIArguments = {"2", "10000000000"};
     private static BigInteger mPrimeNumber;
     private static long time;
 
     public static void main(String args[]) {
-        /*mPrimeNumber = new BigInteger("1000000000100011");
+
+        mPrimeNumber = new BigInteger("1000000000100011");
         System.out.println();
         time = System.currentTimeMillis();
         if (sequentialPrimeChecker(mPrimeNumber))
@@ -20,14 +20,7 @@ public class Main {
         time = System.currentTimeMillis();
         parallelPrimeChecker();
         System.out.println("Parallel Processing Time: " + String.valueOf(System.currentTimeMillis() - time));
-*/
-        time = System.currentTimeMillis();
-        parallelPICalculator();
-        System.out.println("Parallel Processing Time: " + String.valueOf(System.currentTimeMillis() - time));
 
-        time = System.currentTimeMillis();
-        sequentialPICalculator();
-        System.out.println("Sequential Processing Time: " + String.valueOf(System.currentTimeMillis() - time));
     }
 
     private static boolean sequentialPrimeChecker(BigInteger number) {
@@ -54,21 +47,5 @@ public class Main {
         }
     }
 
-    private static void parallelPICalculator() {
-        ParallelJava2PI parallelJava2PI = new ParallelJava2PI();
-        try {
-            parallelJava2PI.main(mPIArguments);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    private static void sequentialPICalculator() {
-        SequentialPI sequentialPI = new SequentialPI();
-        try {
-            sequentialPI.main(mPIArguments);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
